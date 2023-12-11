@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>GitHub Star Comparison</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+</head>
+<body>
+<%- include('partials/header') %>
+<div class="container">
+<h2>GitHub Star Comparison</h2>
+<input type="text" id="repo1Url" placeholder="First GitHub repository URL" />
+<input type="text" id="repo2Url" placeholder="Second GitHub repository URL" />
+<button id="compareStars">Compare Stars</button>
+<button id="saveChart">Save Chart</button>
+
+<div id="loader" class="text-center" style="display: none;">
+  <div class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+<canvas id="starsChart"></canvas>
+
+<div id="savedChartsList">
+  <h3>Saved Charts</h3>
+  <div id="savedChartItems">
+    <!-- Buttons for saved charts will be populated here -->
+  </div>
+</div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@^4.4.0" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@^2.0.1" defer></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@latest/dist/chartjs-adapter-date-fns.bundle.min.js" defer></script>
+<script type="module" src="/js/savedChartsRenderer.js"></script>
+<script type="module" src="/js/githubStarsChart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
